@@ -21,7 +21,7 @@ class TestReqResApi:
         # verify
         verify_users_response(response, expected_total, expected_last_names)
 
-    @pytest.mark.parametrize("name,job", read_csv("new_users.csv", True, ";"))
+    @pytest.mark.parametrize("name,job", read_csv("resources/new_users.csv", True, ";"))
     def test_post_user(self, name, job):
         # prepare
         user_req = create_post_user_request(name, job)
